@@ -63,7 +63,7 @@ highlight! link ModeMsg          AltFg_text
 highlight! link StatusLine       AltBg_text_bold
 highlight! link StatusLineNC     AltBg_text
 highlight! link StatusLineTerm   AltBg_text_bold
-highlight! link StatusLineNCTerm AltBg_text
+highlight! link StatusLineTermNC AltBg_text
 highlight! link Search           PurpleBg_text
 highlight! link IncSearch        AltPurpleBg_text
 highlight! link TabLineFill      AltBg_NoFg
