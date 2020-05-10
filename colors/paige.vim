@@ -94,6 +94,10 @@ highlight! link SpellLocal YellowBg_text
 highlight! link SpellRare  YellowBg_text
 
 
+" netrw
+highlight! link Directory AltBg_text
+
+
 " Syntax
 highlight! link Todo                YellowBg_text
 highlight! link htmlLink            BlueFg_text_underline
