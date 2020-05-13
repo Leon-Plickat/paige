@@ -12,35 +12,35 @@ set t_Co=256
 let g:colors_name = "paige"
 
 " Types
-highlight Default_text            ctermbg=231 ctermfg=232
-highlight Default_text_bold       ctermbg=231 ctermfg=232 cterm=bold
-highlight Default_text_italic     ctermbg=231 ctermfg=232 cterm=italic
-highlight Default_text_underline  ctermbg=231 ctermfg=232 cterm=underline
+highlight Default_text            ctermbg=231 ctermfg=232                  guibg=#ffffff guifg=#080808
+highlight Default_text_bold       ctermbg=231 ctermfg=232 cterm=bold       guibg=#ffffff guifg=#080808 gui=bold
+highlight Default_text_italic     ctermbg=231 ctermfg=232 cterm=italic     guibg=#ffffff guifg=#080808 gui=italic
+highlight Default_text_underline  ctermbg=231 ctermfg=232 cterm=underline  guibg=#ffffff guifg=#080808 gui=underline
 
-highlight AltFg_text              ctermbg=231 ctermfg=245
-highlight AltFg_text_2            ctermbg=231 ctermfg=248
+highlight AltFg_text              ctermbg=231 ctermfg=245                  guibg=#ffffff guifg=#8a8a8a
+highlight AltFg_text_2            ctermbg=231 ctermfg=248                  guibg=#ffffff guifg=#a8a8a8
 
-highlight AltBg_text              ctermbg=254 ctermfg=232
-highlight AltBg_text_bold         ctermbg=254 ctermfg=232 cterm=bold
-highlight AltBg_text_italic       ctermbg=254 ctermfg=232 cterm=italic
-highlight AltBg_text_underline    ctermbg=254 ctermfg=232 cterm=underline
-highlight AltBg_text_no_override  ctermbg=254
-highlight AltBg_text_none         ctermbg=254 ctermfg=232 cterm=none
-highlight AltBg_NoFg              ctermbg=254 ctermfg=254 cterm=none
+highlight AltBg_text              ctermbg=254 ctermfg=232                  guibg=#e4e4e4 guifg=#080808
+highlight AltBg_text_bold         ctermbg=254 ctermfg=232 cterm=bold       guibg=#e4e4e4 guifg=#080808 gui=bold
+highlight AltBg_text_italic       ctermbg=254 ctermfg=232 cterm=italic     guibg=#e4e4e4 guifg=#080808 gui=italic
+highlight AltBg_text_underline    ctermbg=254 ctermfg=232 cterm=underline  guibg=#e4e4e4 guifg=#080808 gui=underline
+highlight AltBg_text_no_override  ctermbg=254                              guibg=#e4e4e4
+highlight AltBg_text_none         ctermbg=254 ctermfg=232 cterm=none       guibg=#e4e4e4 guifg=#080808 gui=none
+highlight AltBg_NoFg              ctermbg=254 ctermfg=254 cterm=none       guibg=#e4e4e4 guifg=#e4e4e4 gui=none
 
-highlight GreenBg_text            ctermbg=148 ctermfg=232
-highlight RedBg_text              ctermbg=197 ctermfg=232
-highlight YellowBg_text           ctermbg=220 ctermfg=232
-highlight BlueBg_text             ctermbg=39  ctermfg=232
-highlight PurpleBg_text           ctermbg=141 ctermfg=232
-highlight AltPurpleBg_text        ctermbg=139 ctermfg=232
+highlight GreenBg_text            ctermbg=148 ctermfg=232 guibg=#afd700 guifg=#080808
+highlight RedBg_text              ctermbg=197 ctermfg=232 guibg=#ff005f guifg=#080808
+highlight YellowBg_text           ctermbg=220 ctermfg=232 guibg=#ffd700 guifg=#080808
+highlight BlueBg_text             ctermbg=39  ctermfg=232 guibg=#00afff guifg=#080808
+highlight PurpleBg_text           ctermbg=141 ctermfg=232 guibg=#af87ff guifg=#080808
+highlight AltPurpleBg_text        ctermbg=139 ctermfg=232 guibg=#af87af guifg=#080808
 
-highlight BlueFg_text_underline   ctermbg=231  ctermfg=21 cterm=underline
+highlight BlueFg_text_underline   ctermbg=231 ctermfg=21 cterm=underline guibg=#ffffff guifg=#0000ff gui=underline
 
-highlight Menu_select             ctermbg=70  ctermfg=231 cterm=bold
-highlight Menu_no_select          ctermbg=240 ctermfg=231
-highlight Menu_scroll_bar         ctermbg=240 ctermfg=240
-highlight Menu_scroll_bar_thumb   ctermbg=202 ctermfg=202
+highlight Menu_select             ctermbg=70  ctermfg=231 cterm=bold guibg=#5faf00 guifg=#ffffff
+highlight Menu_no_select          ctermbg=240 ctermfg=231            guibg=#585858 guifg=#ffffff
+highlight Menu_scroll_bar         ctermbg=240 ctermfg=240            guibg=#585858 guifg=#585858
+highlight Menu_scroll_bar_thumb   ctermbg=202 ctermfg=202            guibg=#585858 guifg=#ff5f00
 
 
 
