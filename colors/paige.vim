@@ -35,6 +35,10 @@ highlight BlueBg_text             ctermbg=39  ctermfg=232 guibg=#00afff guifg=#0
 highlight PurpleBg_text           ctermbg=141 ctermfg=232 guibg=#af87ff guifg=#080808
 highlight AltPurpleBg_text        ctermbg=139 ctermfg=232 guibg=#af87af guifg=#080808
 
+highlight RedFg_text              ctermbg=231 ctermfg=196 guibg=#ff005f guifg=#080808
+highlight GreenFg_text            ctermbg=231 ctermfg=34  guibg=#afd700 guifg=#080808
+highlight BlueFg_text             ctermbg=231 ctermfg=21  guibg=#ffffff guifg=#0000ff gui=underline
+
 highlight BlueFg_text_underline   ctermbg=231 ctermfg=21 cterm=underline guibg=#ffffff guifg=#0000ff gui=underline
 
 highlight Menu_select             ctermbg=70  ctermfg=231 cterm=bold guibg=#5faf00 guifg=#ffffff
@@ -83,6 +87,9 @@ highlight! link WarningMsg       YellowBg_text
 highlight! link DiffChange  YellowBg_text
 highlight! link DiffAdd     GreenBg_text
 highlight! link DiffDelete  RedBg_text
+highlight! link diffAdded   GreenFg_text
+highlight! link diffRemoved RedFg_text
+highlight! link diffLine    BlueFg_text
 " TODO
 highlight DiffText          ctermbg=1  ctermfg=7 cterm=bold
 
