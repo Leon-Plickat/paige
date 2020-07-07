@@ -156,3 +156,12 @@ highlight! link markdownH6          Title
 highlight! link markdownH6Delimiter Title
 highlight! link markdownListMarker  Default_text_bold
 highlight! link markdownError       Default_text
+
+
+" git commit
+highlight! link gitcommitSummary   Title
+highlight! link gitcommitFirstLine Title
+highlight! link gitcommitBlank     RedBg_text
+highlight! link gitcommitComment   Comment
+highlight! link gitcommitHeader    Default_text_bold
+
