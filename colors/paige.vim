@@ -1,167 +1,212 @@
-" Paige vim colourscheme
+"
+" ▄▄▄▄▄▄                 ██
+" ██▀▀▀▀█▄               ▀▀
+" ██    ██   ▄█████▄   ████      ▄███▄██   ▄████▄
+" ██████▀    ▀ ▄▄▄██     ██     ██▀  ▀██  ██▄▄▄▄██
+" ██        ▄██▀▀▀██     ██     ██    ██  ██▀▀▀▀▀▀
+" ██        ██▄▄▄███  ▄▄▄██▄▄▄  ▀██▄▄███  ▀██▄▄▄▄█
+" ▀▀         ▀▀▀▀ ▀▀  ▀▀▀▀▀▀▀▀   ▄▀▀▀ ██    ▀▀▀▀▀
+"                                ▀████▀▀
+" File:       paige.vim
+" Maintainer: Leon Henrik Plickat <leonhenrik.plickat@stud.uni-goettingen.de>
+" License:    GPLv3
 
-set background=light
-if version > 580
-	highlight clear
-	if exists("syntax_on")
-		syntax reset
-	endif
+if !has('gui_running') && &t_Co < 256
+	finish
 endif
 
-set t_Co=256
+highlight clear
+
+if exists("syntax_on")
+	syntax reset
+endif
+
+set background=light
+
 let g:colors_name = "paige"
 
-" Types
-highlight Default_text            ctermbg=231 ctermfg=232                  guibg=#ffffff guifg=#080808
-highlight Default_text_bold       ctermbg=231 ctermfg=232 cterm=bold       guibg=#ffffff guifg=#080808 gui=bold
-highlight Default_text_italic     ctermbg=231 ctermfg=232 cterm=italic     guibg=#ffffff guifg=#080808 gui=italic
-highlight Default_text_underline  ctermbg=231 ctermfg=232 cterm=underline  guibg=#ffffff guifg=#080808 gui=underline
+if exists("*<SID>PaigeHighlight")
+	delf <SID>PaigeHighlight
+endif
 
-highlight AltFg_text              ctermbg=231 ctermfg=245                  guibg=#ffffff guifg=#8a8a8a
-highlight AltFg_text_2            ctermbg=231 ctermfg=248                  guibg=#ffffff guifg=#a8a8a8
+" Fancy highlight wrapper function, because some highlight groups, like Normal
+" apparently do not like being linked. It is not perfect, but it solves the
+" problem.
+function! <SID>PaigeHighlight(group, type)
+	if !empty(a:type[0])
+		exec "highlight " . a:group . " ctermbg=" . a:type[0]
+	endif
+	if !empty(a:type[1])
+		exec "highlight " . a:group . " ctermfg=" . a:type[1]
+	endif
+	if !empty(a:type[2])
+		exec "highlight " . a:group . " cterm=" . a:type[2]
+	endif
+	if !empty(a:type[3])
+		exec "highlight " . a:group . " guibg=" . a:type[3]
+	endif
+	if !empty(a:type[4])
+		exec "highlight " . a:group . " guifg=" . a:type[4]
+	endif
+	if !empty(a:type[5])
+		exec "highlight " . a:group . " gui=" . a:type[5]
+	endif
+endfunction
 
-highlight AltBg_text              ctermbg=254 ctermfg=232                  guibg=#e4e4e4 guifg=#080808
-highlight AltBg_text_bold         ctermbg=254 ctermfg=232 cterm=bold       guibg=#e4e4e4 guifg=#080808 gui=bold
-highlight AltBg_text_italic       ctermbg=254 ctermfg=232 cterm=italic     guibg=#e4e4e4 guifg=#080808 gui=italic
-highlight AltBg_text_underline    ctermbg=254 ctermfg=232 cterm=underline  guibg=#e4e4e4 guifg=#080808 gui=underline
-highlight AltBg_text_no_override  ctermbg=254                              guibg=#e4e4e4
-highlight AltBg_text_none         ctermbg=254 ctermfg=232 cterm=none       guibg=#e4e4e4 guifg=#080808 gui=none
-highlight AltBg_NoFg              ctermbg=254 ctermfg=254 cterm=none       guibg=#e4e4e4 guifg=#e4e4e4 gui=none
+" Types -> [ ctermbg, ctermfg, cterm, guibg, guifg, gui ]
+let s:default_text            = [ '231', '232',          '', '#ffffff', '#080808',          '' ]
+let s:default_text_bold       = [ '231', '232',      'bold', '#ffffff', '#080808',      'bold' ]
+let s:default_text_italic     = [ '231', '232',    'italic', '#ffffff', '#080808',    'italic' ]
+let s:default_text_underline  = [ '231', '232', 'underline', '#ffffff', '#080808', 'underline' ]
 
-highlight GreenBg_text            ctermbg=148 ctermfg=232 guibg=#afd700 guifg=#080808
-highlight RedBg_text              ctermbg=197 ctermfg=232 guibg=#ff005f guifg=#080808
-highlight YellowBg_text           ctermbg=220 ctermfg=232 guibg=#ffd700 guifg=#080808
-highlight BlueBg_text             ctermbg=39  ctermfg=232 guibg=#00afff guifg=#080808
-highlight PurpleBg_text           ctermbg=141 ctermfg=232 guibg=#af87ff guifg=#080808
-highlight AltPurpleBg_text        ctermbg=139 ctermfg=232 guibg=#af87af guifg=#080808
+let s:alt_fg_text             = [ '231', '245',          '', '#ffffff', '#8a8a8a',          '' ]
+let s:alt_fg_text_2           = [ '231', '248',          '', '#ffffff', '#a8a8a8',          '' ]
 
-highlight RedFg_text              ctermbg=231 ctermfg=196 guibg=#ff005f guifg=#080808
-highlight GreenFg_text            ctermbg=231 ctermfg=34  guibg=#afd700 guifg=#080808
-highlight BlueFg_text             ctermbg=231 ctermfg=21  guibg=#ffffff guifg=#0000ff gui=underline
+let s:alt_bg_text             = [ '254', '232',          '', '#e4e4e4', '#080808',          '' ]
+let s:alt_bg_text_bold        = [ '254', '232',      'bold', '#e4e4e4', '#080808',      'bold' ]
+let s:alt_bg_text_italic      = [ '254', '232',    'italic', '#e4e4e4', '#080808',    'italic' ]
+let s:alt_bg_text_underline   = [ '254', '232', 'underline', '#e4e4e4', '#080808', 'underline' ]
+let s:alt_bg_text_no_override = [ '254',    '',          '', '#e4e4e4',        '',          '' ]
+let s:alt_bg_text_none        = [ '254', '232',      'none', '#e4e4e4', '#080808',      'none' ]
+let s:alt_bg_no_fg            = [ '254', '254',      'none', '#e4e4e4', '#e4e4e4',      'none' ]
 
-highlight BlueFg_text_underline   ctermbg=231 ctermfg=21 cterm=underline guibg=#ffffff guifg=#0000ff gui=underline
+let s:green_bg_text           = [ '148', '232',          '', '#afd700', '#080808',          '' ]
+let s:red_bg_text             = [ '197', '232',          '', '#ff005f', '#080808',          '' ]
+let s:yellow_bg_text          = [ '220', '232',          '', '#ffd700', '#080808',          '' ]
+let s:blue_bg_text            = [  '39', '232',          '', '#00afff', '#080808',          '' ]
+let s:purple_bg_text          = [ '141', '232',          '', '#af87ff', '#080808',          '' ]
+let s:alt_purple_bg_text      = [ '139', '232',          '', '#af87af', '#080808',          '' ]
 
-highlight Menu_select             ctermbg=70  ctermfg=231 cterm=bold guibg=#5faf00 guifg=#ffffff
-highlight Menu_no_select          ctermbg=240 ctermfg=231            guibg=#585858 guifg=#ffffff
-highlight Menu_scroll_bar         ctermbg=240 ctermfg=240            guibg=#585858 guifg=#585858
-highlight Menu_scroll_bar_thumb   ctermbg=202 ctermfg=202            guibg=#585858 guifg=#ff5f00
+let s:red_fg_text             = [ '231', '196',          '', '#ff005f', '#080808',          '' ]
+let s:green_fg_text           = [ '231',  '34',          '', '#afd700', '#080808',          '' ]
+let s:blue_fg_text            = [ '231',  '21',          '', '#ffffff', '#0000ff',          '' ]
+let s:blue_fg_text_underline  = [ '231',  '21', 'underline', '#ffffff', '#0000ff', 'underline' ]
 
-
+let s:menu_select             = [ '70 ', '231',      'bold', '#5faf00', '#ffffff',          '' ]
+let s:menu_no_select          = [ '240', '231',          '', '#585858', '#ffffff',          '' ]
+let s:menu_scroll_bar         = [ '240', '240',          '', '#585858', '#585858',          '' ]
+let s:menu_scroll_bar_thumb   = [ '202', '202',          '', '#585858', '#ff5f00',          '' ]
 
 " UI
-highlight! link Normal           Default_text
-highlight! link Folded           AltBg_text
-highlight! link CursorLine       AltBg_text_no_override
-highlight! link CursorColumn     AltBg_text_no_override
-highlight! link ColorColumn      AltBg_text_no_override
-highlight! link SignColumn       AltBg_text_no_override
-highlight! link Visual           BlueBg_text
-highlight! link VisualNOS        BlueBg_text
-highlight! link VertSplit        AltBg_text_bold
-highlight! link Pmenu            Menu_no_select
-highlight! link PmenuSel         Menu_select
-highlight! link PmenuSbar        Menu_scroll_bar
-highlight! link PmenuThumb       Menu_scroll_bar_thumb
-highlight! link WildMenu         Menu_select
-highlight! link ModeMsg          AltFg_text
-highlight! link StatusLine       AltBg_text_bold
-highlight! link StatusLineNC     AltBg_text
-highlight! link StatusLineTerm   AltBg_text_bold
-highlight! link StatusLineTermNC AltBg_text
-highlight! link Search           PurpleBg_text
-highlight! link IncSearch        AltPurpleBg_text
-highlight! link TabLineFill      AltBg_NoFg
-highlight! link TabLineSel       Menu_select
-highlight! link TabLine          AltBg_text_none
-highlight! link EndOfBuffer      AltFg_text
-highlight! link LineNr           AltBg_text
-highlight! link CursorLineNr     AltBg_text
-highlight! link MatchParen       YellowBg_text
-highlight! link Conceal          Default_text
-highlight! link Error            RedBg_text
-highlight! link ErrorMsg         RedBg_text
-highlight! link WarningMsg       YellowBg_text
-
+call <sid>PaigeHighlight('Normal',           s:default_text)
+call <sid>PaigeHighlight('Folded',           s:alt_bg_text)
+call <sid>PaigeHighlight('CursorLine',       s:alt_bg_text_no_override)
+call <sid>PaigeHighlight('CursorColumn',     s:alt_bg_text_no_override)
+call <sid>PaigeHighlight('ColorColumn',      s:alt_bg_text_no_override)
+call <sid>PaigeHighlight('SignColumn',       s:alt_bg_text_no_override)
+call <sid>PaigeHighlight('Visual',           s:blue_bg_text)
+call <sid>PaigeHighlight('VisualNOS',        s:blue_bg_text)
+call <sid>PaigeHighlight('VertSplit',        s:alt_bg_text_bold)
+call <sid>PaigeHighlight('Pmenu',            s:menu_no_select)
+call <sid>PaigeHighlight('PmenuSel',         s:menu_select)
+call <sid>PaigeHighlight('PmenuSbar',        s:menu_scroll_bar)
+call <sid>PaigeHighlight('PmenuThumb',       s:menu_scroll_bar_thumb)
+call <sid>PaigeHighlight('WildMenu',         s:menu_select)
+call <sid>PaigeHighlight('ModeMsg',          s:alt_fg_text)
+call <sid>PaigeHighlight('StatusLine',       s:alt_bg_text_bold)
+call <sid>PaigeHighlight('StatusLineNC',     s:alt_bg_text)
+call <sid>PaigeHighlight('StatusLineTerm',   s:alt_bg_text_bold)
+call <sid>PaigeHighlight('StatusLineTermNC', s:alt_bg_text)
+call <sid>PaigeHighlight('Search',           s:purple_bg_text)
+call <sid>PaigeHighlight('IncSearch',        s:alt_purple_bg_text)
+call <sid>PaigeHighlight('TabLineFill',      s:alt_bg_no_fg)
+call <sid>PaigeHighlight('TabLineSel',       s:menu_select)
+call <sid>PaigeHighlight('TabLine',          s:alt_bg_text_none)
+call <sid>PaigeHighlight('EndOfBuffer',      s:alt_fg_text)
+call <sid>PaigeHighlight('LineNr',           s:alt_bg_text)
+call <sid>PaigeHighlight('CursorLineNr',     s:alt_bg_text)
+call <sid>PaigeHighlight('MatchParen',       s:yellow_bg_text)
+call <sid>PaigeHighlight('Conceal',          s:default_text)
+call <sid>PaigeHighlight('Error',            s:red_bg_text)
+call <sid>PaigeHighlight('ErrorMsg',         s:red_bg_text)
+call <sid>PaigeHighlight('WarningMsg',       s:yellow_bg_text)
 
 " Diff
-highlight! link DiffChange  YellowBg_text
-highlight! link DiffAdd     GreenBg_text
-highlight! link DiffDelete  RedBg_text
-highlight! link diffAdded   GreenFg_text
-highlight! link diffRemoved RedFg_text
-highlight! link diffLine    BlueFg_text
-" TODO
-highlight DiffText          ctermbg=1  ctermfg=7 cterm=bold
-
+call <sid>PaigeHighlight('DiffChange',  s:yellow_bg_text)
+call <sid>PaigeHighlight('DiffAdd',     s:green_bg_text)
+call <sid>PaigeHighlight('DiffDelete',  s:red_bg_text)
+call <sid>PaigeHighlight('diffAdded',   s:green_fg_text)
+call <sid>PaigeHighlight('diffRemoved', s:red_fg_text)
+call <sid>PaigeHighlight('diffLine',    s:blue_fg_text)
 
 " Spell
-highlight! link SpellBad   RedBg_text
-highlight! link SpellCap   YellowBg_text
-highlight! link SpellLocal YellowBg_text
-highlight! link SpellRare  YellowBg_text
-
+call <sid>PaigeHighlight('SpellBad',   s:red_bg_text)
+call <sid>PaigeHighlight('SpellCap',   s:yellow_bg_text)
+call <sid>PaigeHighlight('SpellLocal', s:yellow_bg_text)
+call <sid>PaigeHighlight('SpellRare',  s:yellow_bg_text)
 
 " netrw
-highlight! link Directory AltBg_text
+call <sid>PaigeHighlight('netrwDir',      s:blue_fg_text)
+call <sid>PaigeHighlight('netrwClassify', s:default_text_bold)
+call <sid>PaigeHighlight('netrwExe',      s:green_fg_text)
 
 
-" Syntax
-highlight! link Todo                YellowBg_text
-highlight! link htmlLink            BlueFg_text_underline
-highlight! link Comment             AltFg_text_2
-highlight! link markdownCodeBlock   Default_text
-highlight! link Title               AltBg_text_bold
-highlight! link PreProc             Default_text_bold
-highlight! link Identifier          Default_text_bold
-highlight! link Statement           Default_text_bold
-highlight! link Special             Default_text_bold
-highlight! link Type                Default_text_bold
-highlight! link NonText             Default_text_bold
-highlight! link Conditional         Default_text_bold
-highlight! link Repeat              Default_text_bold
-highlight! link Logical             Default_text_bold
-highlight! link Compare             Default_text_bold
-highlight! link Label               Default_text_underline
-highlight! link Constant            Default_text
-highlight! link Pointer             Default_text
-highlight! link cErrInParen         Default_text
-highlight! link Delimiter           Default_text
-highlight! link vimHiGroup          Default_text
-highlight! link mesonString         Default_text
+" Generic Syntax
+call <sid>PaigeHighlight('Todo',        s:yellow_bg_text)
+call <sid>PaigeHighlight('Comment',     s:alt_fg_text_2)
+call <sid>PaigeHighlight('Title',       s:alt_bg_text_bold)
+call <sid>PaigeHighlight('PreProc',     s:default_text_bold)
+call <sid>PaigeHighlight('Identifier',  s:default_text_bold)
+call <sid>PaigeHighlight('Statement',   s:default_text_bold)
+call <sid>PaigeHighlight('Special',     s:default_text_bold)
+call <sid>PaigeHighlight('Type',        s:default_text_bold)
+call <sid>PaigeHighlight('NonText',     s:default_text_bold)
+call <sid>PaigeHighlight('Conditional', s:default_text_bold)
+call <sid>PaigeHighlight('Repeat',      s:default_text_bold)
+call <sid>PaigeHighlight('Logical',     s:default_text_bold)
+call <sid>PaigeHighlight('Compare',     s:default_text_bold)
+call <sid>PaigeHighlight('Label',       s:default_text_underline)
+call <sid>PaigeHighlight('Constant',    s:default_text)
+call <sid>PaigeHighlight('Pointer',     s:default_text)
+call <sid>PaigeHighlight('Delimiter',   s:default_text)
 
-highlight! link schemeSyntax      Default_text_bold
-highlight! link schemeFunction    Default_text_bold
-highlight! link schemeParentheses Default_text
-highlight! link schemeNumber      Default_text
-highlight! link schemeString      Default_text
+" HTML
+call <sid>PaigeHighlight('htmlLink', s:blue_fg_text_underline)
 
-highlight! link texComment        Comment
-highlight! link texSection        Default_text_bold
-highlight! link texParen          Default_text
-highlight! link texCmdArgs        Default_text
-highlight! link texBeginEnd       Default_text
-highlight! link texBeginEndName   Default_text_bold
+" meson
+call <sid>PaigeHighlight('mesonString', s:default_text)
 
-highlight! link markdownH1          Title
-highlight! link markdownH1Delimiter Title
-highlight! link markdownH2          Title
-highlight! link markdownH2Delimiter Title
-highlight! link markdownH3          Title
-highlight! link markdownH3Delimiter Title
-highlight! link markdownH4          Title
-highlight! link markdownH4Delimiter Title
-highlight! link markdownH5          Title
-highlight! link markdownH5Delimiter Title
-highlight! link markdownH6          Title
-highlight! link markdownH6Delimiter Title
-highlight! link markdownListMarker  Default_text_bold
-highlight! link markdownError       Default_text
+" Vim
+call <sid>PaigeHighlight('vimHiGroup', s:default_text)
 
+" C
+call <sid>PaigeHighlight('cErrInParen', s:default_text)
+
+" Scheme
+call <sid>PaigeHighlight('schemeSyntax',      s:default_text_bold)
+call <sid>PaigeHighlight('schemeFunction',    s:default_text_bold)
+call <sid>PaigeHighlight('schemeParentheses', s:default_text)
+call <sid>PaigeHighlight('schemeNumber',      s:default_text)
+call <sid>PaigeHighlight('schemeString',      s:default_text)
+
+" (La)Tex / vimtex
+call <sid>PaigeHighlight('texComment',      s:alt_fg_text_2)
+call <sid>PaigeHighlight('texSection',      s:default_text_bold)
+call <sid>PaigeHighlight('texParen',        s:default_text)
+call <sid>PaigeHighlight('texCmdArgs',      s:default_text)
+call <sid>PaigeHighlight('texBeginEnd',     s:default_text)
+call <sid>PaigeHighlight('texBeginEndName', s:default_text_bold)
+
+" markdown
+call <sid>PaigeHighlight('markdownH1',          s:alt_bg_text_bold)
+call <sid>PaigeHighlight('markdownH1Delimiter', s:alt_bg_text_bold)
+call <sid>PaigeHighlight('markdownH2',          s:alt_bg_text_bold)
+call <sid>PaigeHighlight('markdownH2Delimiter', s:alt_bg_text_bold)
+call <sid>PaigeHighlight('markdownH3',          s:alt_bg_text_bold)
+call <sid>PaigeHighlight('markdownH3Delimiter', s:alt_bg_text_bold)
+call <sid>PaigeHighlight('markdownH4',          s:alt_bg_text_bold)
+call <sid>PaigeHighlight('markdownH4Delimiter', s:alt_bg_text_bold)
+call <sid>PaigeHighlight('markdownH5',          s:alt_bg_text_bold)
+call <sid>PaigeHighlight('markdownH5Delimiter', s:alt_bg_text_bold)
+call <sid>PaigeHighlight('markdownH6',          s:alt_bg_text_bold)
+call <sid>PaigeHighlight('markdownH6Delimiter', s:alt_bg_text_bold)
+call <sid>PaigeHighlight('markdownListMarker',  s:default_text_bold)
+call <sid>PaigeHighlight('markdownError',       s:default_text)
+call <sid>PaigeHighlight('markdownCodeBlock',   s:green_fg_text)
 
 " git commit
-highlight! link gitcommitSummary   Title
-highlight! link gitcommitFirstLine Title
-highlight! link gitcommitBlank     RedBg_text
-highlight! link gitcommitComment   Comment
-highlight! link gitcommitHeader    Default_text_bold
-
+call <sid>PaigeHighlight('gitcommitSummary',   s:alt_bg_text_bold)
+call <sid>PaigeHighlight('gitcommitFirstLine', s:alt_bg_text_bold)
+call <sid>PaigeHighlight('gitcommitBlank',     s:red_bg_text)
+call <sid>PaigeHighlight('gitcommitComment',   s:alt_fg_text_2)
+call <sid>PaigeHighlight('gitcommitHeader',    s:default_text_bold)
