@@ -75,8 +75,8 @@ let s:green_bg_text           = [ '148', '232',          '', '#afd700', '#080808
 let s:red_bg_text             = [ '197', '232',          '', '#ff005f', '#080808',          '' ]
 let s:yellow_bg_text          = [ '220', '232',          '', '#ffd700', '#080808',          '' ]
 let s:blue_bg_text            = [  '39', '232',          '', '#00afff', '#080808',          '' ]
-let s:purple_bg_text          = [ '141', '232',          '', '#af87ff', '#080808',          '' ]
-let s:alt_purple_bg_text      = [ '139', '232',          '', '#af87af', '#080808',          '' ]
+let s:purple_bg_text_none     = [ '141', '232',      'none', '#af87ff', '#080808',      'none' ]
+let s:alt_purple_bg_text_none = [ '139', '232',      'none', '#af87af', '#080808',      'none' ]
 
 let s:red_fg_text             = [ '231', '196',          '', '#ff005f', '#080808',          '' ]
 let s:green_fg_text           = [ '231',  '34',          '', '#afd700', '#080808',          '' ]
@@ -108,8 +108,8 @@ call <sid>PaigeHighlight('StatusLine',       s:alt_bg_text_bold)
 call <sid>PaigeHighlight('StatusLineNC',     s:alt_bg_text_none)
 call <sid>PaigeHighlight('StatusLineTerm',   s:alt_bg_text_bold)
 call <sid>PaigeHighlight('StatusLineTermNC', s:alt_bg_text_none)
-call <sid>PaigeHighlight('Search',           s:purple_bg_text)
-call <sid>PaigeHighlight('IncSearch',        s:alt_purple_bg_text)
+call <sid>PaigeHighlight('Search',           s:purple_bg_text_none)
+call <sid>PaigeHighlight('IncSearch',        s:alt_purple_bg_text_none)
 call <sid>PaigeHighlight('TabLineFill',      s:alt_bg_no_fg)
 call <sid>PaigeHighlight('TabLineSel',       s:menu_select)
 call <sid>PaigeHighlight('TabLine',          s:alt_bg_text_none)
