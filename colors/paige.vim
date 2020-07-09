@@ -210,3 +210,12 @@ call <sid>PaigeHighlight('gitcommitFirstLine', s:alt_bg_text_bold)
 call <sid>PaigeHighlight('gitcommitBlank',     s:red_bg_text)
 call <sid>PaigeHighlight('gitcommitComment',   s:alt_fg_text_2)
 call <sid>PaigeHighlight('gitcommitHeader',    s:default_text_bold)
+
+" .desktop files
+call <sid>PaigeHighlight('dtGroup',      s:alt_bg_text_bold)
+call <sid>PaigeHighlight('dtTypeKey',    s:default_text_bold)
+call <sid>PaigeHighlight('dtExecKey',    s:default_text_bold)
+call <sid>PaigeHighlight('dtLocaleKey',  s:default_text_bold)
+call <sid>PaigeHighlight('dtBooleanKey', s:default_text_bold)
+call <sid>PaigeHighlight('dtStringKey',  s:default_text_bold)
+call <sid>PaigeHighlight('dtDelim',      s:alt_fg_text_2)
