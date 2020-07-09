@@ -66,7 +66,7 @@ let s:alt_bg_text             = [ '254', '232',          '', '#e4e4e4', '#080808
 let s:alt_bg_text_bold        = [ '254', '232',      'bold', '#e4e4e4', '#080808',      'bold' ]
 let s:alt_bg_text_italic      = [ '254', '232',    'italic', '#e4e4e4', '#080808',    'italic' ]
 let s:alt_bg_text_underline   = [ '254', '232', 'underline', '#e4e4e4', '#080808', 'underline' ]
-let s:alt_bg_text_no_override = [ '254',    '',          '', '#e4e4e4',        '',          '' ]
+let s:alt_bg_text_no_override = [ '254',    '',      'none', '#e4e4e4',        '',      'none' ]
 let s:alt_bg_text_none        = [ '254', '232',      'none', '#e4e4e4', '#080808',      'none' ]
 let s:alt_bg_no_fg            = [ '254', '254',      'none', '#e4e4e4', '#e4e4e4',      'none' ]
 
