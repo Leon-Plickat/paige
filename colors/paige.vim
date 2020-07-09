@@ -60,6 +60,7 @@ let s:default_text_italic     = [ '231', '232',    'italic', '#ffffff', '#080808
 let s:default_text_underline  = [ '231', '232', 'underline', '#ffffff', '#080808', 'underline' ]
 
 let s:alt_fg_text             = [ '231', '245',          '', '#ffffff', '#8a8a8a',          '' ]
+let s:alt_fg_text_none        = [ '231', '245',      'none', '#ffffff', '#8a8a8a',      'none' ]
 let s:alt_fg_text_2           = [ '231', '248',          '', '#ffffff', '#a8a8a8',          '' ]
 
 let s:alt_bg_text             = [ '254', '232',          '', '#e4e4e4', '#080808',          '' ]
@@ -102,7 +103,7 @@ call <sid>PaigeHighlight('PmenuSel',         s:menu_select)
 call <sid>PaigeHighlight('PmenuSbar',        s:menu_scroll_bar)
 call <sid>PaigeHighlight('PmenuThumb',       s:menu_scroll_bar_thumb)
 call <sid>PaigeHighlight('WildMenu',         s:menu_select)
-call <sid>PaigeHighlight('ModeMsg',          s:alt_fg_text)
+call <sid>PaigeHighlight('ModeMsg',          s:alt_fg_text_none)
 call <sid>PaigeHighlight('StatusLine',       s:alt_bg_text_bold)
 call <sid>PaigeHighlight('StatusLineNC',     s:alt_bg_text_none)
 call <sid>PaigeHighlight('StatusLineTerm',   s:alt_bg_text_bold)
