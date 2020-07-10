@@ -165,7 +165,32 @@ call <sid>PaigeHighlight('Pointer',     s:default_text)
 call <sid>PaigeHighlight('Delimiter',   s:default_text)
 
 " HTML
-call <sid>PaigeHighlight('htmlLink', s:blue_fg_text_underline)
+call <sid>PaigeHighlight('htmlTag',            s:default_text_bold)
+call <sid>PaigeHighlight('htmlEndTag',         s:default_text_bold)
+call <sid>PaigeHighlight('htmlTagName',        s:default_text_bold)
+call <sid>PaigeHighlight('htmlSpecialTagName', s:default_text_bold)
+call <sid>PaigeHighlight('htmlComment',        s:alt_fg_text_2)
+call <sid>PaigeHighlight('htmlCommentPart',    s:alt_fg_text_2)
+call <sid>PaigeHighlight('htmlArg',            s:default_text_bold)
+call <sid>PaigeHighlight('htmlString',         s:default_text)
+call <sid>PaigeHighlight('htmlLink',           s:blue_fg_text_underline)
+call <sid>PaigeHighlight('htmlBold',           s:default_text_bold)
+call <sid>PaigeHighlight('htmlItalic',         s:default_text_italic)
+
+" CSS
+call <sid>PaigeHighlight('cssBraces',         s:default_text)
+call <sid>PaigeHighlight('cssNoise',          s:default_text)
+call <sid>PaigeHighlight('cssBoxProp',        s:default_text_bold)
+call <sid>PaigeHighlight('cssBoxAttr',        s:default_text)
+call <sid>PaigeHighlight('cssTextProp',       s:default_text_bold)
+call <sid>PaigeHighlight('cssTextAttr',       s:default_text)
+call <sid>PaigeHighlight('cssValueLength',    s:default_text)
+call <sid>PaigeHighlight('cssValueNumber',    s:default_text)
+call <sid>PaigeHighlight('cssUnitDecorators', s:default_text)
+call <sid>PaigeHighlight('cssAtRule',         s:default_text_bold)
+call <sid>PaigeHighlight('cssAtRuleLogical',  s:default_text_bold)
+call <sid>PaigeHighlight('cssMediaType',      s:default_text_bold)
+call <sid>PaigeHighlight('cssMediaProp',      s:default_text_bold)
 
 " meson
 call <sid>PaigeHighlight('mesonString', s:default_text)
