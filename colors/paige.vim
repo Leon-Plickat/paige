@@ -78,8 +78,8 @@ let s:blue_bg_text            = [  '39', '232',          '', '#00afff', '#080808
 let s:purple_bg_text_none     = [ '141', '232',      'none', '#af87ff', '#080808',      'none' ]
 let s:alt_purple_bg_text_none = [ '139', '232',      'none', '#af87af', '#080808',      'none' ]
 
-let s:red_fg_text             = [ '231', '196',          '', '#ff005f', '#080808',          '' ]
-let s:green_fg_text           = [ '231',  '34',          '', '#afd700', '#080808',          '' ]
+let s:red_fg_text             = [ '231', '196',          '', '#ffffff', '#ff0000',          '' ]
+let s:green_fg_text           = [ '231',  '34',          '', '#ffffff', '#00af00',          '' ]
 let s:blue_fg_text            = [ '231',  '21',          '', '#ffffff', '#0000ff',          '' ]
 let s:blue_fg_text_underline  = [ '231',  '21', 'underline', '#ffffff', '#0000ff', 'underline' ]
 
