@@ -141,6 +141,9 @@ call <sid>PaigeHighlight('netrwDir',      s:blue_fg_text)
 call <sid>PaigeHighlight('netrwClassify', s:default_text_bold)
 call <sid>PaigeHighlight('netrwExe',      s:green_fg_text)
 
+" quickfix
+call <sid>PaigeHighlight('qfLineNr',   s:default_text_bold)
+call <sid>PaigeHighlight('qfFilename', s:default_text_bold)
 
 " Generic Syntax
 call <sid>PaigeHighlight('Todo',        s:yellow_bg_text)
