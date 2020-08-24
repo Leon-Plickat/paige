@@ -248,3 +248,10 @@ call <sid>PaigeHighlight('dtLocaleKey',  s:default_text_bold)
 call <sid>PaigeHighlight('dtBooleanKey', s:default_text_bold)
 call <sid>PaigeHighlight('dtStringKey',  s:default_text_bold)
 call <sid>PaigeHighlight('dtDelim',      s:alt_fg_text_2)
+
+" scdoc
+call <sid>PaigeHighlight('scdocHeader',        s:alt_bg_text_bold)
+call <sid>PaigeHighlight('scdocPreambleName',  s:alt_bg_text_bold)
+call <sid>PaigeHighlight('scdocPreambleExtra', s:alt_bg_text)
+call <sid>PaigeHighlight('scdocBold',          s:default_text_bold)
+
