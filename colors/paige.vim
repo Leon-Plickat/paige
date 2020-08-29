@@ -154,7 +154,8 @@ call <sid>PaigeHighlight('Identifier',  s:default_text_bold)
 call <sid>PaigeHighlight('Statement',   s:default_text_bold)
 call <sid>PaigeHighlight('Special',     s:default_text_bold)
 call <sid>PaigeHighlight('Type',        s:default_text_bold)
-call <sid>PaigeHighlight('NonText',     s:default_text_bold)
+call <sid>PaigeHighlight('NonText',     s:alt_fg_text_2) " NonText includes listchars: eol, extends, prescedes
+call <sid>PaigeHighlight('SpecialKey',  s:alt_fg_text_2) " SpecialKey includes listchars: tabs, spaces, nbsp
 call <sid>PaigeHighlight('Conditional', s:default_text_bold)
 call <sid>PaigeHighlight('Repeat',      s:default_text_bold)
 call <sid>PaigeHighlight('Logical',     s:default_text_bold)
