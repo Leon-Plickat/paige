@@ -256,3 +256,9 @@ call <sid>PaigeHighlight('scdocPreambleName',  s:alt_bg_text_bold)
 call <sid>PaigeHighlight('scdocPreambleExtra', s:alt_bg_text)
 call <sid>PaigeHighlight('scdocBold',          s:default_text_bold)
 
+" man
+call <sid>PaigeHighlight('manHeader',         s:alt_bg_text_bold)
+call <sid>PaigeHighlight('manSectionHeading', s:alt_bg_text_bold)
+call <sid>PaigeHighlight('manReference',      s:default_text_bold)
+call <sid>PaigeHighlight('manOptionDesc',     s:default_text_bold)
+call <sid>PaigeHighlight('manLongOptionDesc', s:default_text_bold)
