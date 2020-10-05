@@ -7,7 +7,7 @@
 " ██        ██▄▄▄███  ▄▄▄██▄▄▄  ▀██▄▄███  ▀██▄▄▄▄█
 " ▀▀         ▀▀▀▀ ▀▀  ▀▀▀▀▀▀▀▀   ▄▀▀▀ ██    ▀▀▀▀▀
 "                                ▀████▀▀
-" File:       paige.vim
+" File:       paige-fark.vim
 " Maintainer: Leon Henrik Plickat <leonhenrik.plickat@stud.uni-goettingen.de>
 " License:    GPLv3
 
@@ -21,9 +21,9 @@ if exists("syntax_on")
 	syntax reset
 endif
 
-set background=light
+set background=dark
 
-let g:colors_name = "paige"
+let g:colors_name = "paige-dark"
 
 if exists("*<SID>PaigeHighlight")
 	delf <SID>PaigeHighlight
@@ -61,34 +61,34 @@ endfunction
 " not having a black background.
 
 " Types -> [ ctermbg, ctermfg, cterm, guibg, guifg, gui ]
-let s:default_text            = [ '231', '232',          '', '#ffffff', '#080808',          '' ]
-let s:default_text_bold       = [ '231', '232',      'bold', '#ffffff', '#080808',      'bold' ]
-let s:default_text_italic     = [ '231', '232',    'italic', '#ffffff', '#080808',    'italic' ]
-let s:default_text_underline  = [ '231', '232', 'underline', '#ffffff', '#080808', 'underline' ]
+let s:default_text            = [ '0', '231',          '', '#000000', '#ffffff',          '' ]
+let s:default_text_bold       = [ '0', '231',      'bold', '#000000', '#ffffff',      'bold' ]
+let s:default_text_italic     = [ '0', '231',    'italic', '#000000', '#ffffff',    'italic' ]
+let s:default_text_underline  = [ '0', '231', 'underline', '#000000', '#ffffff', 'underline' ]
 
-let s:alt_fg_text             = [ '231', '245',          '', '#ffffff', '#8a8a8a',          '' ]
-let s:alt_fg_text_none        = [ '231', '245',      'none', '#ffffff', '#8a8a8a',      'none' ]
-let s:alt_fg_text_2           = [ '231', '248',          '', '#ffffff', '#a8a8a8',          '' ]
+let s:alt_fg_text             = [ '0', '238',          '', '#000000', '#444444',          '' ]
+let s:alt_fg_text_none        = [ '0', '238',      'none', '#000000', '#444444',      'none' ]
+let s:alt_fg_text_2           = [ '0', '248',          '', '#000000', '#a8a8a8',          '' ]
 
-let s:alt_bg_text             = [ '254', '232',          '', '#e4e4e4', '#080808',          '' ]
-let s:alt_bg_text_bold        = [ '254', '232',      'bold', '#e4e4e4', '#080808',      'bold' ]
-let s:alt_bg_text_italic      = [ '254', '232',    'italic', '#e4e4e4', '#080808',    'italic' ]
-let s:alt_bg_text_underline   = [ '254', '232', 'underline', '#e4e4e4', '#080808', 'underline' ]
-let s:alt_bg_text_no_override = [ '254',    '',      'none', '#e4e4e4',        '',      'none' ]
-let s:alt_bg_text_none        = [ '254', '232',      'none', '#e4e4e4', '#080808',      'none' ]
-let s:alt_bg_no_fg            = [ '254', '254',      'none', '#e4e4e4', '#e4e4e4',      'none' ]
+let s:alt_bg_text             = [ '235', '231',          '', '#262626', '#ffffff',          '' ]
+let s:alt_bg_text_bold        = [ '235', '231',      'bold', '#262626', '#ffffff',      'bold' ]
+let s:alt_bg_text_italic      = [ '235', '231',    'italic', '#262626', '#ffffff',    'italic' ]
+let s:alt_bg_text_underline   = [ '235', '231', 'underline', '#262626', '#ffffff', 'underline' ]
+let s:alt_bg_text_no_override = [ '235',    '',      'none', '#262626',        '',      'none' ]
+let s:alt_bg_text_none        = [ '235', '231',      'none', '#262626', '#ffffff',      'none' ]
+let s:alt_bg_no_fg            = [ '235', '235',      'none', '#262626', '#e4e4e4',      'none' ]
 
-let s:green_bg_text           = [ '148', '232',          '', '#afd700', '#080808',          '' ]
-let s:red_bg_text             = [ '197', '232',          '', '#ff005f', '#080808',          '' ]
-let s:yellow_bg_text          = [ '220', '232',          '', '#ffd700', '#080808',          '' ]
-let s:blue_bg_text            = [  '39', '232',          '', '#00afff', '#080808',          '' ]
-let s:purple_bg_text_none     = [ '141', '232',      'none', '#af87ff', '#080808',      'none' ]
-let s:alt_purple_bg_text_none = [ '139', '232',      'none', '#af87af', '#080808',      'none' ]
+let s:green_bg_text           = [ '106', '231',          '', '#87af00', '#ffffff',          '' ]
+let s:red_bg_text             = [ '160', '231',          '', '#d70000', '#ffffff',          '' ]
+let s:yellow_bg_text          = [ '178', '231',          '', '#d7af00', '#ffffff',          '' ]
+let s:blue_bg_text            = [  '39', '231',          '', '#00afff', '#ffffff',          '' ]
+let s:purple_bg_text_none     = [ '141', '231',      'none', '#af87ff', '#ffffff',      'none' ]
+let s:alt_purple_bg_text_none = [ '139', '231',      'none', '#af87af', '#ffffff',      'none' ]
 
-let s:red_fg_text             = [ '231', '196',          '', '#ffffff', '#ff0000',          '' ]
-let s:green_fg_text           = [ '231',  '34',          '', '#ffffff', '#00af00',          '' ]
-let s:blue_fg_text            = [ '231',  '21',          '', '#ffffff', '#0000ff',          '' ]
-let s:blue_fg_text_underline  = [ '231',  '21', 'underline', '#ffffff', '#0000ff', 'underline' ]
+let s:red_fg_text             = [ '0', '196',          '', '#000000', '#ff0000',          '' ]
+let s:green_fg_text           = [ '0',  '34',          '', '#000000', '#00af00',          '' ]
+let s:blue_fg_text            = [ '0',  '27',          '', '#000000', '#005fff',          '' ]
+let s:blue_fg_text_underline  = [ '0',  '27', 'underline', '#000000', '#005fff', 'underline' ]
 
 let s:menu_select             = [ '70 ', '231',      'bold', '#5faf00', '#ffffff',          '' ]
 let s:menu_no_select          = [ '240', '231',          '', '#585858', '#ffffff',          '' ]
