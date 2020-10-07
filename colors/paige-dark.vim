@@ -53,22 +53,15 @@ function! <SID>PaigeHighlight(group, type)
 	endif
 endfunction
 
-" Unfortunately the only "black" of the 256 colours supported by terminals
-" is 0, the system black which is usually overriden with different
-" colourschemes. For the light variant, using 231, which is a dark grey, as
-" black replacement works, but for the dark variant that would look bad, so
-" the system black is used, which will look bad with any terminal colourscheme
-" not having a black background.
-
 " Types -> [ ctermbg, ctermfg, cterm, guibg, guifg, gui ]
-let s:default_text            = [ '0', '231',          '', '#000000', '#ffffff',          '' ]
-let s:default_text_bold       = [ '0', '231',      'bold', '#000000', '#ffffff',      'bold' ]
-let s:default_text_italic     = [ '0', '231',    'italic', '#000000', '#ffffff',    'italic' ]
-let s:default_text_underline  = [ '0', '231', 'underline', '#000000', '#ffffff', 'underline' ]
+let s:default_text            = [ '232', '231',          '', '#080808', '#ffffff',          '' ]
+let s:default_text_bold       = [ '232', '231',      'bold', '#080808', '#ffffff',      'bold' ]
+let s:default_text_italic     = [ '232', '231',    'italic', '#080808', '#ffffff',    'italic' ]
+let s:default_text_underline  = [ '232', '231', 'underline', '#080808', '#ffffff', 'underline' ]
 
-let s:alt_fg_text             = [ '0', '238',          '', '#000000', '#444444',          '' ]
-let s:alt_fg_text_none        = [ '0', '238',      'none', '#000000', '#444444',      'none' ]
-let s:alt_fg_text_2           = [ '0', '248',          '', '#000000', '#a8a8a8',          '' ]
+let s:alt_fg_text             = [ '232', '238',          '', '#080808', '#444444',          '' ]
+let s:alt_fg_text_none        = [ '232', '238',      'none', '#080808', '#444444',      'none' ]
+let s:alt_fg_text_2           = [ '232', '248',          '', '#080808', '#a8a8a8',          '' ]
 
 let s:alt_bg_text             = [ '235', '231',          '', '#262626', '#ffffff',          '' ]
 let s:alt_bg_text_bold        = [ '235', '231',      'bold', '#262626', '#ffffff',      'bold' ]
@@ -85,12 +78,12 @@ let s:blue_bg_text            = [  '39', '231',          '', '#00afff', '#ffffff
 let s:purple_bg_text_none     = [ '141', '231',      'none', '#af87ff', '#ffffff',      'none' ]
 let s:alt_purple_bg_text_none = [ '139', '231',      'none', '#af87af', '#ffffff',      'none' ]
 
-let s:red_fg_text             = [ '0', '196',          '', '#000000', '#ff0000',          '' ]
-let s:green_fg_text           = [ '0',  '34',          '', '#000000', '#00af00',          '' ]
-let s:blue_fg_text            = [ '0',  '27',          '', '#000000', '#005fff',          '' ]
-let s:blue_fg_text_underline  = [ '0',  '27', 'underline', '#000000', '#005fff', 'underline' ]
+let s:red_fg_text             = [ '232', '196',          '', '#080808', '#ff0000',          '' ]
+let s:green_fg_text           = [ '232',  '34',          '', '#080808', '#00af00',          '' ]
+let s:blue_fg_text            = [ '232',  '27',          '', '#080808', '#005fff',          '' ]
+let s:blue_fg_text_underline  = [ '232',  '27', 'underline', '#080808', '#005fff', 'underline' ]
 
-let s:menu_select             = [ '70 ', '231',      'bold', '#5faf00', '#ffffff',          '' ]
+let s:menu_select             = [  '70', '231',      'bold', '#5faf00', '#ffffff',          '' ]
 let s:menu_no_select          = [ '240', '231',          '', '#585858', '#ffffff',          '' ]
 let s:menu_scroll_bar         = [ '240', '240',          '', '#585858', '#585858',          '' ]
 let s:menu_scroll_bar_thumb   = [ '202', '202',          '', '#585858', '#ff5f00',          '' ]
@@ -269,3 +262,8 @@ call <sid>PaigeHighlight('manSectionHeading', s:alt_bg_text_bold)
 call <sid>PaigeHighlight('manReference',      s:default_text_bold)
 call <sid>PaigeHighlight('manOptionDesc',     s:default_text_bold)
 call <sid>PaigeHighlight('manLongOptionDesc', s:default_text_bold)
+
+" ALE
+call <sid>PaigeHighlight('ALEErrorSign',   s:red_bg_text)
+call <sid>PaigeHighlight('ALEWarningSign', s:green_fg_text)
+
