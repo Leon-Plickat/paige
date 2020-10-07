@@ -267,3 +267,8 @@ call <sid>PaigeHighlight('manLongOptionDesc', s:default_text_bold)
 call <sid>PaigeHighlight('ALEErrorSign',   s:red_bg_text)
 call <sid>PaigeHighlight('ALEWarningSign', s:green_fg_text)
 
+" quickfix
+call <sid>PaigeHighlight('qfFilename', s:default_text_bold)
+call <sid>PaigeHighlight('qfSeparator', s:default_text)
+call <sid>PaigeHighlight('qfLineNr', s:default_text_bold)
+

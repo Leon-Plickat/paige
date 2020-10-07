@@ -53,13 +53,6 @@ function! <SID>PaigeHighlight(group, type)
 	endif
 endfunction
 
-" Unfortunately the only "black" of the 256 colours supported by terminals
-" is 0, the system black which is usually overriden with different
-" colourschemes. For the light variant, using 231, which is a dark grey, as
-" black replacement works, but for the dark variant that would look bad, so
-" the system black is used, which will look bad with any terminal colourscheme
-" not having a black background.
-
 " Types -> [ ctermbg, ctermfg, cterm, guibg, guifg, gui ]
 let s:default_text            = [ '231', '232',          '', '#ffffff', '#080808',          '' ]
 let s:default_text_bold       = [ '231', '232',      'bold', '#ffffff', '#080808',      'bold' ]
@@ -269,3 +262,7 @@ call <sid>PaigeHighlight('manSectionHeading', s:alt_bg_text_bold)
 call <sid>PaigeHighlight('manReference',      s:default_text_bold)
 call <sid>PaigeHighlight('manOptionDesc',     s:default_text_bold)
 call <sid>PaigeHighlight('manLongOptionDesc', s:default_text_bold)
+
+" ALE
+call <sid>PaigeHighlight('ALEErrorSign',   s:red_bg_text)
+call <sid>PaigeHighlight('ALEWarningSign', s:green_fg_text)

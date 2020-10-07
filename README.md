@@ -11,12 +11,17 @@ theme for emacs, Paige aims to be beautiful, yet accessible. For that purpose,
 it follows a few simple design choices.
 
 * Black text on white background, for the highest possible readability
-* Syntax highlighting with bold text instead of any colours, to reduce the
-  visual noise on the screen to a minimum
+* Syntax highlighting mostly with bold text instead of any colours, to reduce
+  the visual noise on the screen to a minimum
 * Avoiding crass contrasts for UI elements
 * Highlighting text by changing the background instead of the foreground colour,
   with very few exceptions
 * And many more...
+
+Paige ships with an additional dark variant. Behold: Due to the constraints of
+the 256 colours vim colourschemes are limited to, the darkest colour that is
+not part of the first sixteen colours (which are usually overridden by terminal
+colour themes) is 232, which is only a dark gray (`#080808`).
 
 ## Contributing
 
