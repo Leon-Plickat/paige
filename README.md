@@ -18,10 +18,19 @@ it follows a few simple design choices.
   with very few exceptions
 * And many more...
 
-Paige ships with an additional dark variant. Behold: Due to the constraints of
-the 256 colours vim colourschemes are limited to, the darkest colour that is
-not part of the first sixteen colours (which are usually overridden by terminal
-colour themes) is 232, which is only a dark gray (`#080808`).
+## Versions
+
+Paige ships with four versions.
+
+* `paige` is the default theme.
+* `paige-dark` is the dark version of Paige. Behold: Due to the constraints of
+  the 256 colours vim colourschemes are limited to, the darkest colour that is
+  not part of the first sixteen colours (which are usually overridden by terminal
+  colour themes) is 232, which is only a dark gray (`#080808`).
+* `paige-system` the default light version, but using system foreground (7) and
+  background (0) colours.
+* `paige-dark-system` the dark version, but using system foreground (7) and
+  background (0) colours.
 
 ## Contributing
 
